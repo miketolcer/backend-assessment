@@ -22,4 +22,19 @@ app.get("/api/compliment", (req, res) => {
   
 });
 
+app.get("/api/fortune", (req, res) => {
+  const fortunes = ["A faithful friend is a strong defense", 
+          "A fresh start will put you on your way",
+        "You will pass this assessment",
+      "A friend is a present you give yourself",
+    "A pleasant surprise is waiting for you",
+  ];
+  let randomIndex = Math.floor(Math.random() * fortunes.length);
+  let randomFortune = fortunes[randomIndex];
+
+  res.status(200).send(randomFortune);
+
+});
+
+
 app.listen(4000, () => console.log("Server running on 4000"));
